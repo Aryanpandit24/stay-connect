@@ -1,0 +1,186 @@
+/* Background with hotel image + purple overlay */
+.auth-container {
+  min-height: 100vh;
+  background: url("../assets/hotel-bg.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Purple overlay */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(165, 107, 245, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+/* Floating shapes */
+.floating-blob {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: floatAnim 8s infinite ease-in-out;
+  z-index: 1;
+}
+
+.floating-blob:nth-child(1) {
+  top: 10%;
+  left: 10%;
+}
+
+.floating-blob:nth-child(2) {
+  bottom: 15%;
+  right: 20%;
+}
+
+@keyframes floatAnim {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(25px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Glass card */
+.auth-card {
+  width: 380px;
+  padding: 35px 40px;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  box-shadow: 0px 8px 35px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.6s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Title */
+.auth-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #A56BF5;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+/* Input fields with icons */
+.auth-input-wrapper {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #A56BF5;
+  font-size: 18px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.auth-input:focus {
+  border-color: #A56BF5;
+  box-shadow: 0px 0px 6px rgba(165, 107, 245, 0.4);
+}
+
+/* Purple button */
+.auth-btn {
+  width: 100%;
+  padding: 12px 20px;
+  background: #A56BF5;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.auth-btn:hover {
+  background: #934fea;
+}
+
+/* Google button */
+.google-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.google-btn:hover {
+  background: #f4f4f4;
+}
+
+.google-logo {
+  width: 20px;
+}
+
+/* Bottom link */
+.auth-bottom-text {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.purple-link {
+  color: #A56BF5;
+  font-weight: 600;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* For Login Page */
+.auth-login-bg {
+  background: url("../assets/hotel-bg.jpg") center/cover no-repeat;
+}
+
+/* For Register Page */
+.auth-register-bg {
+  background: url("../assets/hotel-bg-2.jpg") center/cover no-repeat;
+}

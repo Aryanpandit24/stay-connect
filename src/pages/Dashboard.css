@@ -1,0 +1,64 @@
+.dashboard-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #7c2ae8, #a44bff, #c777ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  width: 350px;
+  color: white;
+  animation: fadeIn 0.8s ease;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.dashboard-profile-pic {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 15px;
+}
+
+.dashboard-name {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.dashboard-email {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: white;
+  color: #7c2ae8;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #f4e9ff;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

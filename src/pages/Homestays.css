@@ -1,0 +1,307 @@
+/* =============================
+   GLOBAL
+============================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================
+   PAGE
+============================= */
+
+.stays-page {
+  position: relative;
+  background: #f6f0ff;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* =============================
+   INNER WRAPPER
+============================= */
+
+.stays-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 140px 32px 80px;
+  position: relative;
+  z-index: 2;
+  overflow-x: hidden;
+}
+
+/* =============================
+   BACKGROUND (HARD CONTAINED)
+============================= */
+
+.bg-blob1,
+.bg-blob2,
+.doodle-lines {
+  position: absolute;
+  pointer-events: none;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.bg-blob1,
+.bg-blob2 {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.8;
+}
+
+.bg-blob1 {
+  top: -120px;
+  left: -120px;
+  background: rgba(158, 99, 255, 0.28);
+}
+
+.bg-blob2 {
+  bottom: -160px;
+  right: -120px; /* 🔥 reduced to prevent overflow */
+  background: rgba(125, 179, 255, 0.25);
+}
+
+.doodle-lines {
+  inset: 0;
+  background-image: url("../assets/doodle.png");
+  background-size: 300px;
+  opacity: 0.12;
+}
+
+/* =============================
+   NAVBAR (SAFE CENTERED)
+============================= */
+
+.stays-page .navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% - 48px);
+  max-width: 1400px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 76px;
+  padding: 0 28px;
+
+  background: rgba(246, 240, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+
+  z-index: 10;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* LOGO */
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 55px;
+  height: 55px;
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: #4a2bbd;
+}
+
+/* NAV RIGHT */
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-profile-pic {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+/* =============================
+   HEADER
+============================= */
+
+.stays-header {
+  margin-bottom: 24px;
+}
+
+.stays-header h1 {
+  font-size: 32px;
+  color: #6a33cc;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stays-header p {
+  font-size: 14px;
+  color: #5c5377;
+  margin-top: 6px;
+}
+
+/* =============================
+   FILTER
+============================= */
+
+.filter-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 12px 0 24px;
+}
+
+.filter-toggle-btn {
+  padding: 9px 16px;
+  background: #9a57ff;
+  color: #fff;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =============================
+   GRID (BREATHING SPACE ADDED)
+============================= */
+
+.stays-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  padding-inline: 16px; /* 🔥 prevents hover overflow */
+  overflow-x: hidden;
+}
+
+/* =============================
+   CARD
+============================= */
+
+.tile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compact-card {
+  position: relative;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.compact-card:hover {
+  transform: translateY(-6px) scale(1.04); /* 🔥 reduced scale */
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.stay-thumb {
+  width: 100%;
+  height: 150px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* =============================
+   TITLE
+============================= */
+
+.stay-title {
+  margin-top: 10px;
+  width: 200px;
+  text-align: center;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #3b2d60;
+  line-height: 1.3;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =============================
+   HOVER OVERLAY
+============================= */
+
+.stay-hover-info {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.25)
+  );
+
+  color: white;
+  padding: 16px;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.compact-card:hover .stay-hover-info {
+  opacity: 1;
+}
+
+/* =============================
+   BUTTON
+============================= */
+
+.stay-btn {
+  margin-top: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 10px;
+  background: #9a57ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
