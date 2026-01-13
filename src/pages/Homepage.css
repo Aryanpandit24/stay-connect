@@ -356,3 +356,120 @@
 html {
   scroll-behavior: smooth;
 }
+
+@media (max-width: 768px) {
+  .fade-left,
+  .fade-right {
+    transform: translateY(20px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+/* =========================
+   MOBILE RESPONSIVE FIXES
+========================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .home-navbar {
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  .home-logo {
+    font-size: 22px;
+    gap: 8px;
+  }
+
+  .home-logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .home-nav-buttons {
+    gap: 8px;
+  }
+
+  .nav-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  /* HERO */
+  .hero-overlay h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero-overlay p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  /* ABOUT SECTION */
+  .about-section {
+    padding: 80px 24px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+  }
+
+  /* DIAMONDS */
+  .about-diamonds {
+    width: 280px;
+    height: 280px;
+  }
+
+  .diamond-grid {
+    grid-template-columns: repeat(2, 120px);
+    grid-template-rows: repeat(2, 120px);
+    gap: 18px;
+  }
+
+  .diamond {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* FOOTER */
+  .home-footer {
+    font-size: 13px;
+    padding: 24px 16px;
+  }
+}
